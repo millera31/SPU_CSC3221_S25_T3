@@ -1,0 +1,61 @@
+<!-- 
+  Author: Allie Miller
+  Date: 5/19/25
+  Description: UI for testing HTTP client with jsonplaceholder API
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP Client Demo</title>
+
+  <style>
+    /* basic page layout */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* button styling */
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      background-color: #ae54af;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* output box styling */
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #7f0675;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTTP Client Demo</h1>
+
+  <!-- buttons for each request -->
+  <button id="getBtn">GET Users</button>
+  <button id="postBtn">POST User</button>
+  <button id="putBtn">PUT User</button>
+  <button id="deleteBtn">DELETE User</button>
+  <button id="patchBtn">PATCH User</button>
+
+  <!-- where the response will be shown -->
+  <div id="output">Click a button to make a request...</div>
+
+  <!-- javascript files -->
+  <script src="httpLibrary.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
