@@ -20,14 +20,36 @@ class HttpClient {
       }
     }
   
-    // TODO: implement POST request
+    // POST request
     async post(endpoint, data) {
-      // placeholder for POST
+      try{
+        const response = await fetch(`${this.baseURL}${endpoint}`,{
+          menthod: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) throw new Error(`POST failed: ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        console.error("POST Error:", error);
+        throw error;
+      }
     }
   
-    // TODO: implement PUT request
+    // PUT request
     async put(endpoint, data) {
-      // placeholder for PUT
+      try{
+        const response = await fetch(`${this.baseURL}${endpoint}`,{
+          menthod: "PUT",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) throw new Error(`PUT failed: ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        console.error("PUT Error:", error);
+        throw error;
+      }
     }
   
     // TODO: implement DELETE request
