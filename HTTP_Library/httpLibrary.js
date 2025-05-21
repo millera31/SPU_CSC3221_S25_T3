@@ -54,13 +54,33 @@ async get(endpoint) {
     }
   
     // TODO: implement DELETE request
-    async delete(endpoint) {
-      // placeholder for DELETE
+    async delete(endpoint, data) {
+      try{
+        const response = await fetch(`${this.baseURL}${endpoint}`, {
+          method: "DELETE", 
+        });
+        if(!response.ok) throw new Error(`DELETE failed: ${response.status}`);
+        return await response.json();
+      } catch(error) {
+        console.error("DELETE Error:", error);
+        throw error;
+      }
     }
   
     // TODO: implement PATCH request
     async patch(endpoint, data) {
-      // placeholder for PATCH
+      try{
+        const response = await fetch(`${this.baseURL}${endpoint}`, {
+          method: "PATCH",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(data), 
+        });
+        if(!response.ok) throw new Error(`PATCH failed: ${response.status}`);
+        return await response.json();
+      } catch(error) {
+        console.error("PATCH Error:", error);
+        throw error;
+      }
     }
   }
   

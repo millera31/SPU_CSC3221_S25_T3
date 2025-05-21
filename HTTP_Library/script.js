@@ -47,12 +47,24 @@ document.getElementById("postBtn").addEventListener("click", async () => {
     }
   });
 
-// DELETE - placeholder 
-document.getElementById("deleteBtn").addEventListener("click", () => {
-  output.innerHTML = `<h3>DELETE</h3><pre>// TODO: Implement DELETE method</pre>`;
+// DELETE
+document.getElementById("deleteBtn").addEventListener("click", async () => {
+  try {
+    const data = await client.delete("/users/1");
+    showOutput("DELETE /users/1", data);
+  } catch (err) {
+    showError(err);
+  }
 });
 
-// PATCH - placeholder
-document.getElementById("patchBtn").addEventListener("click", () => {
-  output.innerHTML = `<h3>PATCH</h3><pre>// TODO: Implement PATCH method</pre>`;
+
+// PATCH
+document.getElementById("patchBtn").addEventListener("click", async() => {
+  const patchUpdate = {name: "Patcher"};
+  try {
+    const data = await client.patch("/users/1", patchUpdate);
+    showOutput("PATCH /users/1", data);
+  } catch(err) {
+    showError(err);
+  }
 });
