@@ -9,22 +9,23 @@ class HttpClient {
     }
   
     // GET request
-    async get(endpoint) {
-      try {
-        const response = await fetch(`${this.baseURL}${endpoint}`);
-        if (!response.ok) throw new Error(`GET failed: ${response.status}`);
-        return await response.json();
-      } catch (error) {
-        console.error("GET Error:", error);
-        throw error;
-      }
+async get(endpoint) {
+    try {
+      const response = await fetch(`${this.baseURL}${endpoint}`); // No body here
+      if (!response.ok) throw new Error(`GET failed: ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      console.error("GET Error:", error);
+      throw error;
     }
+  }
+  
   
     // POST request
     async post(endpoint, data) {
       try{
         const response = await fetch(`${this.baseURL}${endpoint}`,{
-          menthod: "POST",
+          method: "POST",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(data),
         });
@@ -40,7 +41,7 @@ class HttpClient {
     async put(endpoint, data) {
       try{
         const response = await fetch(`${this.baseURL}${endpoint}`,{
-          menthod: "PUT",
+          method: "PUT",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(data),
         });
