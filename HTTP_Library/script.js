@@ -25,15 +25,27 @@ document.getElementById("getBtn").addEventListener("click", async () => {
   }
 });
 
-//POST - placeholder
-document.getElementById("postBtn").addEventListener("click", () => {
-  output.innerHTML = `<h3>POST</h3><pre>// TODO: Implement POST method</pre>`;
-});
-
-// PUT - placeholder 
-document.getElementById("putBtn").addEventListener("click", () => {
-  output.innerHTML = `<h3>PUT</h3><pre>// TODO: Implement PUT method</pre>`;
-});
+// POST
+document.getElementById("postBtn").addEventListener("click", async () => {
+    const newUser = { name: "Allie", email: "allie@example.com" };
+    try {
+      const data = await client.post("/users", newUser);
+      showOutput("POST /users", data);
+    } catch (err) {
+      showError(err);
+    }
+  });
+  
+  // PUT
+  document.getElementById("putBtn").addEventListener("click", async () => {
+    const updatedUser = { name: "Updated Name", email: "updated@example.com" };
+    try {
+      const data = await client.put("/users/1", updatedUser);
+      showOutput("PUT /users/1", data);
+    } catch (err) {
+      showError(err);
+    }
+  });
 
 // DELETE - placeholder 
 document.getElementById("deleteBtn").addEventListener("click", () => {
