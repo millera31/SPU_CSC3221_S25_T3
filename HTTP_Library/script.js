@@ -15,6 +15,59 @@ function showError(err) {
   output.innerHTML = `<h3 style="color:red;">Error:</h3><pre>${err.message}</pre>`;
 }
 
+// button effect
+document.getElementById("sendBtn").addEventListener("click", async () => {
+  const method = document.getElementById("method").value;
+  const endpoint = document.getElementById("endpoint").value;
+
+  //default values
+  const pathParams = safeJsonParse(document.getElementById("pathParams").value, {});
+  const queryParams = safeJsonParse(document.getElementById("queryParams").value, {});
+  const body = safeJsonParse(document.getElementById("body").value, null); 
+
+  try {
+    let result;
+
+    switch (method) {
+      case "GET":
+        result = await client.get(endpoint, { pathParams, queryParams });
+        break;
+      case "POST":
+        result = await client.post(endpoint, body, { pathParams, queryParams });
+        break;
+      case "PUT":
+        result = await client.put(endpoint, body, { pathParams, queryParams });
+        break;
+      case "PATCH":
+        result = await client.request("PATCH", endpoint, { data: body, pathParams, queryParams });
+        break;
+      case "DELETE":
+        result = await client.delete(endpoint, { pathParams, queryParams });
+        break;
+      default:
+        throw new Error("Unsupported HTTP method");
+    }
+
+    // show response
+    showOutput(`${method} ${endpoint}`, result);
+  } catch (err) {
+    // error
+    showError(err);
+  }
+});
+
+// safely parse JSON
+function safeJsonParse(input, fallback = {}) {
+  if (!input.trim()) return fallback;
+  try {
+    return JSON.parse(input);
+  } catch {
+    return fallback;
+  }
+}
+
+
+/*
 // GET METHOD - DONE
 document.getElementById("getBtn").addEventListener("click", async () => {
   try {
@@ -68,3 +121,17 @@ document.getElementById("patchBtn").addEventListener("click", async() => {
     showError(err);
   }
 });
+
+document.getElementById("patchBtn").addEventListener("click", async() => {
+  try {
+    const response = await client.request("PATCH", "/users/:id", {
+      pathParams: { id: 1 },
+      data: { email: "patched@example.com" }
+    });
+    showOutput("PATCH /users/1", response);
+  } catch (err) {
+    showError(err);
+  }
+});
+
+*/
