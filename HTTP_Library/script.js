@@ -80,7 +80,7 @@ document.getElementById("getBtn").addEventListener("click", async () => {
 
 // POST
 document.getElementById("postBtn").addEventListener("click", async () => {
-    const newUser = { name: "Allie", email: "allie@example.com" };
+    const newUser = { name: "New User", email: "newuser@example.com" };
     try {
       const data = await client.post("/users", newUser);
       showOutput("POST /users", data);
