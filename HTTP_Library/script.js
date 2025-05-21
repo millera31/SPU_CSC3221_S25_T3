@@ -15,7 +15,7 @@ function showError(err) {
   output.innerHTML = `<h3 style="color:red;">Error:</h3><pre>${err.message}</pre>`;
 }
 
-// GET METHOD - DONE
+// GET METHOD
 document.getElementById("getBtn").addEventListener("click", async () => {
   try {
     const data = await client.get("/users");
@@ -27,7 +27,7 @@ document.getElementById("getBtn").addEventListener("click", async () => {
 
 // POST
 document.getElementById("postBtn").addEventListener("click", async () => {
-    const newUser = { name: "Allie", email: "allie@example.com" };
+    const newUser = { name: "New User", email: "newuser@example.com" };
     try {
       const data = await client.post("/users", newUser);
       showOutput("POST /users", data);
