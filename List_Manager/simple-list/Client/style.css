@@ -1,0 +1,74 @@
+/* 
+  Styles for the simple list. Defines layout, colors, spacing etc.
+*/
+
+/* Style for the page background and layout */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #f7f7f7;
+  }
+  
+  /* header styling */
+  h1 {
+    text-align: center;
+    color: #384085;
+    margin-bottom: 1rem;
+  }
+  
+    /* input form styling */
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+    /* input box styling */
+  input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+    /* button styling */
+  button {
+    padding: 10px 15px;
+    background-color: #384085;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* remove bullet points and padding from list */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* style each list item as a box with delete button */
+  li {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+    /* style the delete button */
+  li button {
+    background-color: #a04e4e;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

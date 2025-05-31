@@ -1,0 +1,29 @@
+<!--
+  HTML structure for the Simple List web app. A user interface to display the list, add new items, and delete existing ones.
+-->
+
+<!-- main structure for the Simple List web app -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Simple List</h1>
+
+  <!-- form to add new list items -->
+  <form id="addForm">
+    <input type="text" id="newItem" placeholder="Add item..." required />
+    <button type="submit">Add</button>
+  </form>
+
+    <!-- section to display the list of items -->
+  <ul id="itemList"></ul>
+
+  <!-- JavaScript file that controls app behavior -->
+  <script src="script.js"></script>
+</body>
+</html>
