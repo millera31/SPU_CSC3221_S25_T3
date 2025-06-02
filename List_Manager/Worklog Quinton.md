@@ -1,5 +1,4 @@
-- Set up and managed the listdata.json file for data storage  
-- Created file handling logic (filemgr.js) for reading and writing data  
-- Fixed issues where items were not persisting between refreshes  
-- Debugged and optimized JSON structure, ensuring stable data storage  
-- Conducted final testing to verify all features function smoothly
+- worked together on building the list manager web application on Allie's computer
+- shared responsibilities across client-side scripting, server setup, and file handling
+- worked together to debug issues and test functionality
+- we attempted to reutilize the httplibrary code but couldn’t get it to work so we had to rewrite the functionality
