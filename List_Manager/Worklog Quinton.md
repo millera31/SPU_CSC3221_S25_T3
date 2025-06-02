@@ -1,1 +1,5 @@
-
+- Set up and managed the listdata.json file for data storage  
+- Created file handling logic (filemgr.js) for reading and writing data  
+- Fixed issues where items were not persisting between refreshes  
+- Debugged and optimized JSON structure, ensuring stable data storage  
+- Conducted final testing to verify all features function smoothly
