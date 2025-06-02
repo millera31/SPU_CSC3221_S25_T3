@@ -1,1 +1,5 @@
-
+- Developed the Express server to handle API requests efficiently  
+- Configured static file serving to ensure proper front-end connections  
+- Implemented routes for adding, deleting, and retrieving list items
+- Added error handling and validation to prevent crashes and incorrect inputs  
+- Optimized server performance and request processing for faster response times
