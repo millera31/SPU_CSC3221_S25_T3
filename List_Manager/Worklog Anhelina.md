@@ -1,5 +1,4 @@
-- Created and structured the HTML layout for the web app  
-- Designed interactive UI elements like buttons and input fields  
-- Improved form submission functionality, ensuring smooth user experience  
-- Styled the page using CSS for responsiveness and better aesthetics  
-- Wrote and organized project documentation, including setup instructions and API details
+- worked together on building the list manager web application on Allie's computer
+- shared responsibilities across client-side scripting, server setup, and file handling
+- worked together to debug issues and test functionality
+- we attempted to reutilize the httplibrary code but couldn’t get it to work so we had to rewrite the functionality
