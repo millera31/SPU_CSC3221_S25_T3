@@ -2,6 +2,23 @@
 // This script handles fetching, adding, and deleting items from a list
 // and updating the UI accordingly.
 
+// Initialize httpclient
+const client = new HttpClient(window.location.origin);
+
+async function fetchList() {
+  return await client.get("/api");
+}
+
+async function addItem(text) {
+  return await client.post("/api", { text });
+}
+
+async function deleteItem(index) {
+  return await client.delete(`/api/${index}`);
+}
+
+
+/* Old hand-rewritten code for httpclient
 // fetch list data from server
 async function fetchList() {
     const res = await fetch("/api");
@@ -23,7 +40,8 @@ async function fetchList() {
     const res = await fetch(`/api/${index}`, { method: "DELETE" });
     return res.json();
   }
-  
+*/
+
 // render the list items in the UI
   function renderList(items) {
     const ul = document.getElementById("itemList");
