@@ -1,5 +1,14 @@
+// Authored by Allie, Quinton, Lina
+// 6/5/25 CSC 3221
+// Client side operations for task manager
+
+
+
+// HttpClient initiation 
 const client = new HttpClient(window.location.origin);
 
+
+// Server interactions
 async function fetchTasks() {
   return await client.get("/api/tasks");
 }
@@ -16,6 +25,8 @@ async function updateTask(id, data) {
   return await client.put(`/api/tasks/${id}`, { data });
 }
 
+
+// Rendere all tasks for web
 function renderTasks(tasks) {
   const ul = document.getElementById("taskList");
   ul.innerHTML = "";
@@ -38,6 +49,7 @@ function renderTasks(tasks) {
       }
     };
 
+    // Task completion button
     const toggleBtn = document.createElement("button");
     toggleBtn.textContent = completed ? "Undo" : "Complete";
     toggleBtn.onclick = async () => {
@@ -46,6 +58,7 @@ function renderTasks(tasks) {
       renderTasks(updated);
     };
 
+    // Task delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.onclick = async () => {
@@ -61,6 +74,7 @@ function renderTasks(tasks) {
   });
 }
 
+// Submission and task addition
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const input = document.getElementById("newTask");
@@ -72,6 +86,7 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
   renderTasks(tasks);
 });
 
+// Task fetcher loader for page
 window.onload = async () => {
   const tasks = await fetchTasks();
   renderTasks(tasks);

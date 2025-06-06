@@ -1,3 +1,7 @@
+// Authored by Allie, Quinton, Lina
+// 6/5/25 CSC 3221
+// Server setup and initiation
+
 const express = require("express");
 const cors = require("cors");
 const path = require("path");

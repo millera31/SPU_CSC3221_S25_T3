@@ -1,3 +1,7 @@
+// Authored by Allie, Quinton, Lina
+// 6/5/25 CSC 3221
+// Task modeling adn defintion
+
 const mongoose = require("mongoose");
 
 const TaskSchema = new mongoose.Schema({

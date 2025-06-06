@@ -1,3 +1,8 @@
+// Authored by Allie, Quinton, Lina
+// 6/5/25 CSC 3221
+// Re-purposed HttpLibrary class 
+
+
 class HttpClient {
     constructor(baseURL = "") {
       this.baseURL = baseURL;
