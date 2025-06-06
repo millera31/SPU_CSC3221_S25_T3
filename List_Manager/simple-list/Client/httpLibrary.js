@@ -13,7 +13,7 @@ class HttpClient {
         return encodeURIComponent(path[key] || "");
       });
 
-    const fullURL = new URL(url, this.baseURL || window.location.origin); // ✅ key fix
+    const fullURL = new URL(url, this.baseURL || window.location.origin);
 
     Object.entries(query).forEach(([key, value]) => {
       if (value !== undefined && value !== null) {

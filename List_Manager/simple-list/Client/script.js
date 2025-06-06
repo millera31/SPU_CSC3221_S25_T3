@@ -18,30 +18,6 @@ async function deleteItem(index) {
 }
 
 
-/* Old hand-rewritten code for httpclient
-// fetch list data from server
-async function fetchList() {
-    const res = await fetch("/api");
-    return res.json(); // Convert response to JSON
-  }
-  
-// add a new item to the list
-  async function addItem(text) {
-    const res = await fetch("/api", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }), //send the new item in JSON format
-    });
-    return res.json();
-  }
-  
-// delete an item from the list by index
-  async function deleteItem(index) {
-    const res = await fetch(`/api/${index}`, { method: "DELETE" });
-    return res.json();
-  }
-*/
-
 // render the list items in the UI
   function renderList(items) {
     const ul = document.getElementById("itemList");
