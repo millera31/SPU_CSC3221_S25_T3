@@ -1,120 +1,115 @@
-/* Background and page layout */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffe8f0, #e0f4ff);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding-top: 50px;
-  }
-  
-  /* Container styling */
-  .container {
-    background-color: #fff;
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    padding: 35px 30px;
-    width: 100%;
-    max-width: 480px;
-    border: 2px solid #ffd6e0;
-  }
-  
-  /* Heading */
-  h1 {
-    text-align: center;
-    color: #d94f92;
-    margin-bottom: 25px;
-    font-size: 2rem;
-  }
-  
-  /* Form layout */
-  form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-  }
-  
-  input[type="text"] {
-    flex-grow: 1;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1.5px solid #f7cfe4;
-    font-size: 15px;
-    background-color: #fffafc;
-    transition: 0.2s ease;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #f47ba0;
-    outline: none;
-  }
-  
-  /* Add button */
-  button {
-    background-color: #f47ba0;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  
-  button:hover {
-    background-color: #e05586;
-  }
-  
-  /* Task list */
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    background-color: #fff6fa;
-    border: 1.5px solid #fdd0df;
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: 0.2s;
-  }
-  
-  li:hover {
-    background-color: #ffedf4;
-  }
-  
-  .task-text {
-    flex: 1;
-    margin-right: 10px;
-    font-size: 15px;
-    color: #4b4b4b;
-  }
-  
-  .completed .task-text {
-    text-decoration: line-through;
-    color: #999;
-  }
-  
-  /* Action buttons */
-  li button {
-    background-color: #d8a7b1;
-    padding: 6px 10px;
-    font-size: 13px;
-    border: none;
-    border-radius: 8px;
-    margin-left: 6px;
-    color: white;
-  }
-  
-  li button:hover {
-    background-color: #c28e99;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe8f0, #e0f4ff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 480px;
+  border: 2px solid #ffd6e0;
+}
+
+h1 {
+  text-align: center;
+  color: #d94f92;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #f7cfe4;
+  font-size: 15px;
+  background-color: #fffafc;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #f47ba0;
+  outline: none;
+}
+
+button {
+  background-color: #f47ba0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #e05586;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #fff6fa;
+  border: 1.5px solid #fdd0df;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+
+li:hover {
+  background-color: #ffedf4;
+}
+
+.task-text {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 15px;
+  color: #4b4b4b;
+}
+
+li.completed .task-text {
+  text-decoration: line-through;
+  color: #999;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+li button {
+  background-color: #d8a7b1;
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 8px;
+  color: white;
+  min-width: 72px;
+}
+
+li button:hover {
+  background-color: #c28e99;
+}
